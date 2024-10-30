@@ -16,6 +16,82 @@
   --font-size-text-preset-1: 22px;
   --font-size-text-preset-2: 15px;
 }
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-slate-300);
+}
 
 .u-text-regular {
   color: var(--color-slate-900, #1f314f);
@@ -40,4 +116,31 @@
   font-style: normal;
   font-weight: 700;
   line-height: 120%; /* 26.4px */
+}
+
+img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card {
+  background-color: #d5e1ef;
+  max-width: 20rem;
+  padding: var(--spacing-200, 16px) var(--spacing-200, 16px) var(--spacing-500, 40px) var(--spacing-200, 16px);
+  border-radius: 1.25rem;
+  background-color: var(--color-white);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+
+.card_content {
+  padding: 0 var(--spacing-200);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: var(--spacing-200);
+  align-items: center;
+  align-self: stretch;
 }
